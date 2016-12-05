@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="payvenue.catingub.com.tabsandfragments.MainActivity$PlaceholderFragment">
+    tools:context="payvenue.catingub.com.tabsandfragments.MainActivity">
 
     <fragment android:name="payvenue.catingub.com.tabsandfragments.CompletedFragment"
         android:id="@+id/headlines_fragment"
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:layout="@layout/fragment_on_process"
+        tools:layout="@layout/cardview_layout"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
