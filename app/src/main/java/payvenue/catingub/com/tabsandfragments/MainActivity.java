@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+    private TextView mDateAndTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +70,19 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
+        mDateAndTime = (TextView) findViewById(R.id.txtCurrDateTime);
+
+        String timeSettings = android.provider.Settings.System.getString(
+                this.getContentResolver(),
+                android.provider.Settings.System.AUTO_TIME);
+        if (timeSettings.contentEquals("0")) {
+            android.provider.Settings.System.putString(
+                    this.getContentResolver(),
+                    android.provider.Settings.System.AUTO_TIME, "1");
+        }
+        Date now = new Date(System.currentTimeMillis());
+        mDateAndTime.setText(now+"");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
