@@ -28,8 +28,10 @@ public class OverdueFragment extends Fragment implements PopupMenu.OnMenuItemCli
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_overdue, container, false);
+        View view = inflater.inflate(R.layout.cardview_layout, container, false);
         mStatus = (Button) view.findViewById(R.id.btnStatus);
+        mStatus.setBackgroundColor(Color.parseColor("#E82C45"));
+        mStatus.setText("   On Process - Overdue");
         mStatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

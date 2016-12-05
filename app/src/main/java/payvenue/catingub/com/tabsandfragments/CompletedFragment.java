@@ -29,8 +29,10 @@ public class CompletedFragment extends Fragment implements PopupMenu.OnMenuItemC
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_completed, container, false);
+        View view = inflater.inflate(R.layout.cardview_layout, container, false);
         mStatus = (Button) view.findViewById(R.id.btnStatus);
+        mStatus.setBackgroundColor(Color.parseColor("#FF29B06C"));
+        mStatus.setText("   Completed");
         mStatus.setOnClickListener(new View.OnClickListener() {
             @Override
                 public void onClick(View view) {
