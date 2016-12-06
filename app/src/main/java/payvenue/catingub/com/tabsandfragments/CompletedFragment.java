@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -13,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.PopupMenu;
 
+import static android.support.v7.recyclerview.R.styleable.RecyclerView;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,7 +23,7 @@ import android.widget.PopupMenu;
 public class CompletedFragment extends Fragment implements PopupMenu.OnMenuItemClickListener{
 
     private Button mStatus;
-
+    private RecyclerView mRecyclerView;
     public CompletedFragment() {
         // Required empty public constructor
     }
@@ -29,7 +32,8 @@ public class CompletedFragment extends Fragment implements PopupMenu.OnMenuItemC
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.cardview_layout, container, false);
+        View view = inflater.inflate(R.layout.fragment_main, container, false);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.rvCards);
         mStatus = (Button) view.findViewById(R.id.btnStatus);
         mStatus.setBackgroundColor(Color.parseColor("#FF29B06C"));
         mStatus.setText("   Completed");

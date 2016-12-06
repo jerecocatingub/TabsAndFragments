@@ -5,17 +5,19 @@
     android:layout_height="match_parent"
     tools:context="payvenue.catingub.com.tabsandfragments.MainActivity">
 
-    <fragment android:name="payvenue.catingub.com.tabsandfragments.CompletedFragment"
-        android:id="@+id/headlines_fragment"
-        android:layout_weight="1"
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:layout="@layout/cardview_layout"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent">
 
-
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rvCards" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -1,5 +1,6 @@
 package payvenue.catingub.com.tabsandfragments;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,50 +11,39 @@ import android.widget.TextView;
  * Created by Jotine on 12/6/2016.
  */
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-    private String[] mDataset;
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.CardViewHolder>{
 
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
-        public TextView mTextView;
-        public ViewHolder(TextView v) {
-            super(v);
-            mTextView = v;
-        }
+    private final LayoutInflater inflater;
+    
+    public RecyclerViewAdapter(Context context){
+        inflater = LayoutInflater.from(context);
     }
 
-    // Provide a suitable constructor (depends on the kind of dataset)
-    public RecyclerViewAdapter(String[] myDataset) {
-        mDataset = myDataset;
-    }
-
-    // Create new views (invoked by the layout manager)
     @Override
-    public  RecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
-                                                   int viewType) {
-        // create a new view
-        View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_main, parent, false);
-        // set the view's size, margins, paddings and layout parameters
-        ViewHolder vh = new ViewHolder((TextView) v);
-        return vh;
+    public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = inflater.inflate(R.layout.cardview_layout, parent, false);
+        CardViewHolder holder = new CardViewHolder(view);
+        return null;
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
-        holder.mTextView.setText(mDataset[position]);
+    public void onBindViewHolder(CardViewHolder holder, int position) {
 
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return mDataset.length;
+        return 0;
+    }
+
+    class CardViewHolder extends RecyclerView.ViewHolder{
+
+        //Components;
+        TextView WorkOrderNumber;
+        TextView AccountName;
+
+        public CardViewHolder(View itemView) {
+            super(itemView);
+        }
     }
 }
