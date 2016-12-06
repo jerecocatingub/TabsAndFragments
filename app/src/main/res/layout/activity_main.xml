@@ -28,15 +28,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtEmpName"
-                android:text="     Employee Name and Position" />
+                android:text="Employee Name and Position"
+            tools:text="Employee Name and Position"
+            android:paddingLeft="17dp"
+            android:textColor="#FFFFFF" />
 
 
-        <TextView
-            android:text="     Current Date and TIme"
+        <TextClock
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtCurrDateTime"
-            android:layout_weight="1" />
+            android:id="@+id/textClock"
+            android:layout_weight="1"
+            android:paddingLeft="17dp" />
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"

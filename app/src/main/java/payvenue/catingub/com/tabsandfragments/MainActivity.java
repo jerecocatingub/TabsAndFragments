@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
-    private TextView mDateAndTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
