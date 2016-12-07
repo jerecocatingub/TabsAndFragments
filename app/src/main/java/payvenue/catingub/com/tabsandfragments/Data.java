@@ -5,13 +5,17 @@ package payvenue.catingub.com.tabsandfragments;
  */
 
 public class Data {
-    int orderNumber;
+    String orderNumber;
     String accountName;
-    int accountNumber;
+    String accountNumber;
     String workOrderType;
     String meterSerialNumber;
     String address;
     String contactPerson;
+    String contactNumber;
     String instructions;
+    String date;
+    String time;
+    String status;
 
 }

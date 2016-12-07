@@ -162,7 +162,7 @@
                 android:text="Contact No: "
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/txtCustomer"
+                android:id="@+id/txtContactNum"
                 app:layout_constraintTop_toBottomOf="@+id/txtContactPerson"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
@@ -178,17 +178,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtInstructions"
-                app:layout_constraintTop_toBottomOf="@+id/txtCustomer"
                 app:layout_constraintLeft_toRightOf="@+id/imgClipboard"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintRight_toRightOf="parent"
                 android:layout_marginRight="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintVertical_bias="0.0"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
-                android:textColor="#696969" />
+                android:textColor="#696969"
+                app:layout_constraintTop_toBottomOf="@+id/txtContactNum"
+                app:layout_constraintVertical_bias="0.0" />
 
             <ImageView
                 android:layout_width="28dp"
@@ -305,7 +304,8 @@
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
                 android:gravity="right|center_vertical|center_horizontal"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+                android:paddingLeft="17dp" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
