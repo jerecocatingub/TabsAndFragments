@@ -35,21 +35,22 @@ public class OverdueFragment extends Fragment implements PopupMenu.OnMenuItemCli
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_overdue, container, false);
+        View view = inflater.inflate(R.layout.cardview_layout, container, false);
 
-        mRecycler = (RecyclerView) view.findViewById(R.id.rvCards);
-        mAdapter = new RecyclerViewAdapter(getActivity(), getData());
-        mRecycler.setAdapter(mAdapter);
-        mRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
-//        mStatus = (Button) view.findViewById(R.id.btnStatus);
-//        mStatus.setBackgroundColor(Color.parseColor("#E82C45"));
-//        mStatus.setText("On Process - Overdue");
-//        mStatus.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                showPopup(view);
-//            }
-//        });
+//        mRecycler = (RecyclerView) view.findViewById(R.id.rvCards);
+//        mAdapter = new RecyclerViewAdapter(getActivity(), getData());
+//        mRecycler.setAdapter(mAdapter);
+//        mRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+        
+        mStatus = (Button) view.findViewById(R.id.btnStatus);
+        mStatus.setBackgroundColor(Color.parseColor("#E82C45"));
+        mStatus.setText("On Process - Overdue");
+        mStatus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showPopup(view);
+            }
+        });
         return view;
     }
 

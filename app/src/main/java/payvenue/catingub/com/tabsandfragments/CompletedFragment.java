@@ -38,22 +38,22 @@ public class CompletedFragment extends Fragment implements PopupMenu.OnMenuItemC
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_completed, container, false);
+        View view = inflater.inflate(R.layout.cardview_layout, container, false);
 
-        mRecycler = (RecyclerView) view.findViewById(R.id.rvCards);
-        mAdapter = new RecyclerViewAdapter(getActivity(), getData());
-        mRecycler.setAdapter(mAdapter);
-        mRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+//        mRecycler = (RecyclerView) view.findViewById(R.id.rvCards);
+//        mAdapter = new RecyclerViewAdapter(getActivity(), getData());
+//        mRecycler.setAdapter(mAdapter);
+//        mRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-//        mStatus = (Button) view.findViewById(R.id.btnStatus);
-//        mStatus.setBackgroundColor(Color.parseColor("#FF29B06C"));
-//        mStatus.setText("Completed");
-//        mStatus.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//                public void onClick(View view) {
-//                    showPopup(view);
-//                }
-//        });
+        mStatus = (Button) view.findViewById(R.id.btnStatus);
+        mStatus.setBackgroundColor(Color.parseColor("#FF29B06C"));
+        mStatus.setText("Completed");
+        mStatus.setOnClickListener(new View.OnClickListener() {
+            @Override
+                public void onClick(View view) {
+                    showPopup(view);
+                }
+        });
         return view;
     }
 
